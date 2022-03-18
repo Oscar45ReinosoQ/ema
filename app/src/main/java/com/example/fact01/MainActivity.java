@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.item1:
                     selectedFragment = new fragment_Inicio();
-                    Toast.makeText(MainActivity.this, "inicio", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.item2:
                     selectedFragment = new fragment_parametros();
@@ -115,5 +114,4 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = myBulid.create();
         dialog.show();
     }
-
 }
