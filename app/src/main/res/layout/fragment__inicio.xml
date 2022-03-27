@@ -66,15 +66,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgUsuarioInicio"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/perfil"
-            app:shapeAppearance="@style/circular"
+            android:tooltipText="Ir al perfil"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/circular" />
 
         <LinearLayout
             android:id="@+id/linearLayout"

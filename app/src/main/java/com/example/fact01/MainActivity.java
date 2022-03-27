@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,19 +16,35 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /**/
+        mAuth = FirebaseAuth.getInstance();
         // Botton nav
         BottomNavigationView btnNav = findViewById(R.id.bottomNavigationView);
         btnNav.setOnNavigationItemSelectedListener(navListener);
         //Iniciamos el fragmato que deseamos
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Inicio()).commit();
     }
+    /*Firebase suser*/
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(MainActivity.this, Login.class));
+        }
+    }
+
 
     //Listener
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

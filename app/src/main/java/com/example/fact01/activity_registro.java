@@ -20,75 +20,45 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends AppCompatActivity {
+public class activity_registro extends AppCompatActivity {
 
     private EditText etClave, etUsuario;
     private CheckBox checkBox;
-    Button btnIngresar, btnIrRegistro;
+    Button btnRegistrar, btnVolverLogin;
     FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        etClave = (EditText) findViewById(R.id.etClaveLogin);
-        etUsuario = (EditText) findViewById(R.id.etUsuarioLogin);
-        checkBox = (CheckBox) findViewById(R.id.checkBoxLogin);
-        btnIngresar = (Button) findViewById(R.id.btnIngresarLogin);
-        btnIrRegistro = (Button) findViewById(R.id.btnIrRegistro);
+        setContentView(R.layout.activity_registro);
+        btnRegistrar = (Button) findViewById(R.id.btnRegistrar);
+        btnVolverLogin = (Button) findViewById(R.id.btnVolverLogin);
+        etClave = (EditText) findViewById(R.id.etClaveRegistro);
+        etUsuario = (EditText) findViewById(R.id.etUsuarioRegistro);
+        checkBox = (CheckBox) findViewById(R.id.checkBoxRegistrar);
         /*FIREBASE AUTH*/
         mAuth = FirebaseAuth.getInstance();
-        /**/
-        verClave();
-        btnIngresar.setOnClickListener(v -> {
-            loginUser();
-//            startActivity(new Intent(Login.this, MainActivity.class));
-//            finish();
+        /*REGISTRAR*/
+        btnRegistrar.setOnClickListener(view -> {
+            crearUsuario();
         });
-        btnIrRegistro.setOnClickListener(v -> {
-            startActivity(new Intent(Login.this, activity_registro.class));
+
+        /*MOSTRAR CLAVE*/
+        verClave();
+        /*VOLVER AL LOGIN*/
+        btnVolverLogin.setOnClickListener(v -> {
+            startActivity(new Intent(activity_registro.this, Login.class));
             finish();
         });
     }
-
-    /*VERIFCAMOS SI EL USUARIO ESTA EN NUESTRA BASE DE DATOS*/
-    private void loginUser() {
-        String email = etUsuario.getText().toString();
-        String clave = etClave.getText().toString();
-
-        if (TextUtils.isEmpty(email)) {
-            etUsuario.setError("El usuario no debe estar vacio");
-            etUsuario.requestFocus();
-        } else if (TextUtils.isEmpty(clave)) {
-            etClave.setError("La contraseña no debe estar vacia");
-            etClave.requestFocus();
-        } else {
-            mAuth.signInWithEmailAndPassword(email, clave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(Login.this, "Inciaste sesion como:" + email, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login.this, MainActivity.class));
-                        finish();
-                    } else {
-                        etUsuario.setText("");
-                        etClave.setText("");
-                        Toast.makeText(Login.this, "Error de inicio de sesion:" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-    }
-
 
     /*MOSTRAR CLAVE*/
     public void verClave() {
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // depende del estado que se encuentre el checlox para que funcione el metodo checked.
+                // depende del estado que se encuentre el checkbox para que funcione el metodo checked.
                 if (!isChecked) {  //mostrar contrasenia
                     etClave.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 } else { // ocultar contrasenia
@@ -96,6 +66,35 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    /*METODO CREAR USUARIO*/
+    protected void crearUsuario(){
+        String email = etUsuario.getText().toString();
+        String clave = etClave.getText().toString();
+
+        if(TextUtils.isEmpty(email)){
+            etUsuario.setError("El usuario no debe estar vacio");
+            etUsuario.requestFocus();
+        }else if (TextUtils.isEmpty(clave)){
+            etClave.setError("La contraseña no debe estar vacia");
+            etClave.requestFocus();
+        }else{
+            mAuth.createUserWithEmailAndPassword(email, clave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(activity_registro.this, "usuario creado con exito", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(activity_registro.this, Login.class));
+                        finish();
+                    }else{
+                        Toast.makeText(activity_registro.this, "Registro fallido: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        etUsuario.setText("");
+                        etClave.setText("");
+                    }
+                }
+            });
+        }
     }
 
     /*se controla la pulsacion del boton atras y cierra la aplicacion*/

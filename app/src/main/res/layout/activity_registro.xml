@@ -55,7 +55,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/btnIrRegistro"
+                    android:id="@+id/btnVolverLogin"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
@@ -64,7 +64,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/bg_redondeado_secundario"
                     android:backgroundTint="@color/primarioVariante"
-                    android:text="REGISTRATE Y ¡DISFRUTA!"
+                    android:text="volver al login"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <EditText
-            android:id="@+id/etClaveLogin"
+            android:id="@+id/etClaveRegistro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -102,14 +102,14 @@
             android:paddingRight="10dp"
             android:textColor="@color/primario"
             android:textColorHint="@color/primarioVariante"
-            app:layout_constraintBottom_toTopOf="@+id/checkBoxLogin"
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etUsuarioLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/etUsuarioRegistro" />
 
         <EditText
-            android:id="@+id/etUsuarioLogin"
+            android:id="@+id/etUsuarioRegistro"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -138,7 +138,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:gravity="center"
-            android:text="INICIAR SESION"
+            android:text="REGISTRATE Y DISFRUTA"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -147,21 +147,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnIngresarLogin"
+            android:id="@+id/btnRegistrar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="64dp"
             android:background="@drawable/bg_redondeado_secundario"
-            android:text="INGRESAR"
+            android:text="REGISTRARTE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBoxLogin"
+            android:id="@+id/checkBoxRegistrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -171,7 +171,7 @@
             android:textColor="@color/primario"
             android:textColorHint="#9CBEFB"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etClaveLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/etClaveRegistro" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

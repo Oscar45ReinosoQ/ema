@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "385768141996",
+    "project_id": "fact01-f",
+    "storage_bucket": "fact01-f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385768141996:android:6e931a5cff2edb3a489b09",
+        "android_client_info": {
+          "package_name": "com.example.fact01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385768141996-esroookjctvn72145r1ved6lfsv81jrd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-jWTwe18IZW2kkfH9n15ePcuiZkl6_u8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385768141996-esroookjctvn72145r1ved6lfsv81jrd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

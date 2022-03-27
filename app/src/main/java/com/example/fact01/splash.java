@@ -10,17 +10,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class splash extends AppCompatActivity {
 
     ImageView splashImg;
     TextView appName, textViewFrom, textViewAPP;
     LottieAnimationView lottieAnimationView;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        /*FIREBASE AUTH*/
+        mAuth = FirebaseAuth.getInstance();
 
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -40,12 +45,9 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 startActivity(new Intent(splash.this, Login.class));
                 finish();
-
             }
         }, 5000);
-
     }
 }
