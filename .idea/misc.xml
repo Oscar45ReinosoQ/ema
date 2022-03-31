@@ -20,6 +20,7 @@
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/drawable/nav_corners.xml" value="0.2075" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/activity_main_cliente.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/activity_registro.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/fragment__clientes.xml" value="0.2" />
@@ -29,7 +30,7 @@
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/fragment__productos.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/fragment__proveedores.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/fragment_parametros.xml" value="0.2" />
-        <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/item_cliente.xml" value="0.25" />
+        <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/item_cliente.xml" value="0.33" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.2752808988764045" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/layout/menu_parametros.xml" value="0.2" />
         <entry key="..\:/Users/Anthony/AndroidStudioProjects/fact01/app/src/main/res/menu/menu2.xml" value="0.2" />

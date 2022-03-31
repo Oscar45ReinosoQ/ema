@@ -61,28 +61,28 @@ public class MainActivity extends AppCompatActivity {
                     /*=========CLIENTES=========*/
                     View bottomsheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu_parametros, (LinearLayout) findViewById(R.id.bottonSheetContainer));
                     bottomsheetView.findViewById(R.id.btn_param_cliente).setOnClickListener(v -> {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Clientes()).commit();
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Clientes()).commit();
                         Toast.makeText(MainActivity.this, "Clientes", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     });
 
                     /*=========EMPLEADOS=========*/
                     bottomsheetView.findViewById(R.id.btn_param_empleados).setOnClickListener(v -> {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Empleados()).commit();
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Empleados()).commit();
                         Toast.makeText(MainActivity.this, "empleados", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     });
 
                     /*=========PROVEEDORES=========*/
                     bottomsheetView.findViewById(R.id.btn_param_proveedores).setOnClickListener(v -> {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Proveedores()).commit();
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Proveedores()).commit();
                         Toast.makeText(MainActivity.this, "proveedores", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     });
 
                     /*=========PRODUCTOS=========*/
                     bottomsheetView.findViewById(R.id.btn_param_productos).setOnClickListener(v -> {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Productos()).commit();
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, new fragment_Productos()).commit();
                         Toast.makeText(MainActivity.this, "productos", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     });
